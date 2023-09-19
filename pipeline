@@ -8,4 +8,16 @@ pipeline {
 			}
 		}
 	}
+
+	post {
+		always {
+			echo 'say goodbye'
+		}
+		success {
+			echo 'This is success exit'
+		}
+		failure {
+			echo 'This is failure exit'
+		}
+	}
 }

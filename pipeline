@@ -1,6 +1,12 @@
 pipeline {
 	agent any
 
+	options {
+		timeout(time: 20,unit:"SECONDS")
+		buildDiscarder(logRotator(numToKeepStr:"2"))
+		retry(5)
+	}
+
 	stages {
 		stage('Hello') {
 			steps {
